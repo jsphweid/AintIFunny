@@ -1,7 +1,17 @@
 .contentHeader {
-    height: 50px;
+    /*height: 50px;*/
+}
+
+.contentHeaderRow {
+    margin-bottom: 10px;
 }
 
 .invisible {
     opacity: 0;
+}
+
+.timeAgo {
+    font-style: italic;
+    float: right;
+    font-size: 11px;
 }

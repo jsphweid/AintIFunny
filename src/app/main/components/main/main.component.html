@@ -1,25 +1,35 @@
 <div class="container-fluid">
 
 
-    <div style="height: 100px; background-color: ghostwhite" class="row">
-
-    </div>
-
     <!--///////////// header //////////////-->
-    <div class="row">
+    <div class="row contentHeaderRow">
         <!--candidates-->
-        <div style="background-color: gainsboro" class="col-md-4 contentHeader">
+        <div class="col-md-4 contentHeader">
+            <h1>Make Jokes</h1>
+            <p>
+                Here you can create a new joke and decide whether it's worth of being
+                voted on.
+            </p>
             <button (click)="generateNewJoke()" class="btn btn-secondary">Generate New Joke:</button>
         </div>
 
         <!--fresh-->
-        <div style="background-color: gray" class="col-md-4 contentHeader">
-
+        <div class="col-md-4 contentHeader">
+            <h1>Fresh Jokes</h1>
+            <p>
+                Hot off the press. Whenever you or anyone else marks a joke as a
+                "keeper," it immediately show up here to give others a chance to
+                vote on it.
+            </p>
         </div>
 
         <!--trending-->
-        <div style="background-color: beige" class="col-md-4 contentHeader">
-
+        <div class="col-md-4 contentHeader">
+            <h1>Trending Jokes</h1>
+            <p>
+                If a joke survives the "Fresh" category with a good score,
+                it winds up for a while longer.
+            </p>
         </div>
     </div>
 
@@ -27,7 +37,7 @@
     <div class="row">
         <!--candidates-->
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" *ngIf="candidateJokes">
                 <div class="card-block">
                     <tr *ngFor="let joke of candidateJokes">
                         <div [class.invisible] = "kept.includes(joke.id)">
@@ -47,7 +57,7 @@
                         <td>{{ joke.votes }}</td>
                         <td><button class="btn btn-secondary" [disabled]="voter.getVotingRecord(joke.$key) === 1" (click)="voter.handleVote(joke, 1)"><span class="fa fa-thumbs-o-up"></span></button></td>
                         <td><button class="btn btn-secondary" [disabled]="voter.getVotingRecord(joke.$key) === -1" (click)="voter.handleVote(joke, -1)"><span class="fa fa-thumbs-o-down"></span></button></td>
-                        <td>{{ joke.actualJoke }}<br>{{ joke.timeAdded * 1000 | amTimeAgo }}</td>
+                        <td>{{ joke.actualJoke }}<br><span class="timeAgo">{{ joke.timeAdded * 1000 | amTimeAgo }}</span></td>
                     </tr>
                 </div>
             </div>
@@ -61,7 +71,7 @@
                         <td>{{ joke.votes }}</td>
                         <td><button class="btn btn-secondary" [disabled]="voter.getVotingRecord(joke.$key) === 1" (click)="voter.handleVote(joke, 1)"><span class="fa fa-thumbs-o-up"></span></button></td>
                         <td><button class="btn btn-secondary" [disabled]="voter.getVotingRecord(joke.$key) === -1" (click)="voter.handleVote(joke, -1)"><span class="fa fa-thumbs-o-down"></span></button></td>
-                        <td>{{ joke.actualJoke }}<br>{{ joke.timeAdded * 1000 | amTimeAgo }}</td>
+                        <td>{{ joke.actualJoke }}<br><span class="timeAgo">{{ joke.timeAdded * 1000 | amTimeAgo }}</span></td>
                     </tr>
                 </div>
             </div>
