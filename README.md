@@ -2,6 +2,14 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
+# TODO
+ - add about section
+ - fix trending list to have a date element (i.e. last weeks worth)
+ - make second database for all-time list?
+ - make it look good decent
+ - make the trending and all time list scrollable? or only see 10 at a time
+ - add at least 2 more joke algorithms and find a way to select between them
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
