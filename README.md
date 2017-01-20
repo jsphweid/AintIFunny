@@ -3,6 +3,7 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
 # TODO
+ - refactor trending and fresh list displays into a new component
  - add about section
  - fix trending list to have a date element (i.e. last weeks worth)
  - make second database for all-time list?
