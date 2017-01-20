@@ -1,0 +1,55 @@
+<div class="container-fluid">
+
+
+    <div style="height: 100px; background-color: ghostwhite" class="row">
+
+    </div>
+
+    <!--///////////// header //////////////-->
+    <div class="row">
+        <!--candidates-->
+        <div style="background-color: gainsboro" class="col-md-4 contentHeader">
+            <button (click)="generateNewJoke()" class="btn btn-secondary">Generate New Joke:</button>
+        </div>
+
+        <!--fresh-->
+        <div style="background-color: gray" class="col-md-4 contentHeader">
+
+        </div>
+
+        <!--trending-->
+        <div style="background-color: beige" class="col-md-4 contentHeader">
+
+        </div>
+    </div>
+
+    <!--//////////// joke content ////////////-->
+    <div class="row">
+        <!--candidates-->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-block">
+                    <app-new-candidates [candidateJokes]="candidateJokes"></app-new-candidates>
+                </div>
+            </div>
+        </div>
+
+        <!--fresh-->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-block">
+                    This is some text within the fresh card.
+                </div>
+            </div>
+        </div>
+
+        <!--trending-->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-block">
+                    This is some text within the trending card.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

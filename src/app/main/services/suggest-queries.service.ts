@@ -4,9 +4,7 @@ import { Jsonp } from "@angular/http";
 @Injectable()
 export class SuggestQueriesService {
 
-    constructor(private jsonp: Jsonp) {
-
-    }
+    constructor(private jsonp: Jsonp) { }
 
     getSuggestions(query:string, callback:Function) {
         let url = "//suggestqueries.google.com/complete/search";

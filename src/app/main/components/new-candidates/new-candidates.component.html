@@ -1,0 +1,4 @@
+<tr *ngFor="let joke of candidateJokes">
+    <td><button class="btn btn-secondary" (click)="keep(joke)">Keeper</button></td>
+    <td>{{ joke }}</td>
+</tr>

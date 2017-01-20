@@ -11,20 +11,26 @@ import { AngularFireModule, AuthMethods } from 'angularfire2';
 // components
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MainComponent } from './main/components/main.component';
+import { MainComponent } from './main/components/main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HighScoresComponent } from './high-scores/high-scores.component';
 import { AboutComponent } from './about/about.component';
+import { DisplayJokesComponent } from './shared/components/display-jokes/display-jokes.component';
+import { NewCandidatesComponent } from './main/components/new-candidates/new-candidates.component'; // amTimeAgo
 
 // services
 import { AuthService } from './auth/services/auth.service'
 import { SuggestQueriesService } from './main/services/suggest-queries.service'
+import { AllJokesService } from './main/services/all-jokes.service';
+import { WordsService } from './main/services/words.service';
+import { MyFirebaseService } from './main/services/my-firebase.service'
 
 // auth guards
 import { AuthGuard } from './auth/guards/auth-guard';
 
 // pipes
-import { MomentModule } from "angular2-moment"; // amTimeAgo
+import { MomentModule } from "angular2-moment";
+
 
 
 // Firebase / Angularfire
@@ -48,6 +54,8 @@ export const firebaseConfig = {
         NavbarComponent,
         HighScoresComponent,
         AboutComponent,
+        DisplayJokesComponent,
+        NewCandidatesComponent,
     ],
     imports: [
         BrowserModule,
@@ -68,7 +76,11 @@ export const firebaseConfig = {
     providers: [
         AuthService,
         AuthGuard,
-        SuggestQueriesService
+        SuggestQueriesService,
+        AllJokesService,
+        WordsService,
+        MyFirebaseService
+
     ],
     bootstrap: [AppComponent]
 })
