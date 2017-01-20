@@ -1,3 +1,7 @@
 .contentHeader {
     height: 50px;
 }
+
+.invisible {
+    opacity: 0;
+}

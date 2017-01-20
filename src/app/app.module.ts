@@ -16,14 +16,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HighScoresComponent } from './high-scores/high-scores.component';
 import { AboutComponent } from './about/about.component';
 import { DisplayJokesComponent } from './shared/components/display-jokes/display-jokes.component';
-import { NewCandidatesComponent } from './main/components/new-candidates/new-candidates.component'; // amTimeAgo
 
 // services
 import { AuthService } from './auth/services/auth.service'
 import { SuggestQueriesService } from './main/services/suggest-queries.service'
 import { AllJokesService } from './main/services/all-jokes.service';
 import { WordsService } from './main/services/words.service';
-import { MyFirebaseService } from './main/services/my-firebase.service'
+import { VoterService } from './shared/services/voter.service'
 
 // auth guards
 import { AuthGuard } from './auth/guards/auth-guard';
@@ -54,8 +53,7 @@ export const firebaseConfig = {
         NavbarComponent,
         HighScoresComponent,
         AboutComponent,
-        DisplayJokesComponent,
-        NewCandidatesComponent,
+        DisplayJokesComponent
     ],
     imports: [
         BrowserModule,
@@ -79,8 +77,7 @@ export const firebaseConfig = {
         SuggestQueriesService,
         AllJokesService,
         WordsService,
-        MyFirebaseService
-
+        VoterService
     ],
     bootstrap: [AppComponent]
 })

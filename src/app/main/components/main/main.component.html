@@ -29,7 +29,12 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-block">
-                    <app-new-candidates [candidateJokes]="candidateJokes"></app-new-candidates>
+                    <tr *ngFor="let joke of candidateJokes">
+                        <div [class.invisible] = "kept.includes(joke.id)">
+                            <td><button class="btn btn-secondary" (click)="keep(joke)">Keeper</button></td>
+                            <td>{{ joke.text }}</td>
+                        </div>
+                    </tr>
                 </div>
             </div>
         </div>
@@ -38,7 +43,12 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-block">
-                    This is some text within the fresh card.
+                    <tr *ngFor="let joke of freshList">
+                        <td>{{ joke.votes }}</td>
+                        <td><button class="btn btn-secondary" [disabled]="voter.getVotingRecord(joke.$key) === 1" (click)="voter.handleVote(joke, 1)"><span class="fa fa-thumbs-o-up"></span></button></td>
+                        <td><button class="btn btn-secondary" [disabled]="voter.getVotingRecord(joke.$key) === -1" (click)="voter.handleVote(joke, -1)"><span class="fa fa-thumbs-o-down"></span></button></td>
+                        <td>{{ joke.actualJoke }}<br>{{ joke.timeAdded * 1000 | amTimeAgo }}</td>
+                    </tr>
                 </div>
             </div>
         </div>
@@ -47,7 +57,12 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-block">
-                    This is some text within the trending card.
+                    <tr *ngFor="let joke of trendingList">
+                        <td>{{ joke.votes }}</td>
+                        <td><button class="btn btn-secondary" [disabled]="voter.getVotingRecord(joke.$key) === 1" (click)="voter.handleVote(joke, 1)"><span class="fa fa-thumbs-o-up"></span></button></td>
+                        <td><button class="btn btn-secondary" [disabled]="voter.getVotingRecord(joke.$key) === -1" (click)="voter.handleVote(joke, -1)"><span class="fa fa-thumbs-o-down"></span></button></td>
+                        <td>{{ joke.actualJoke }}<br>{{ joke.timeAdded * 1000 | amTimeAgo }}</td>
+                    </tr>
                 </div>
             </div>
         </div>
