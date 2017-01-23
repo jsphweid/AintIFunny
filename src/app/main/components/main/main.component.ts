@@ -33,6 +33,8 @@ export class MainComponent implements OnInit {
         this.allJokes.makeSalesmanJoke(jokes => {
             this.candidateJokes = this.attachIds(jokes);
         });
+        console.log(this.candidateJokes);
+        // if (typeof this.candidateJokes === 'undefined' || this.candidateJokes.length === 0) this.generateNewJoke(); // try again until works
     }
 
     attachIds(strArray: Array<string>): any[] {
