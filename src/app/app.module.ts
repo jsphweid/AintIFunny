@@ -67,8 +67,8 @@ export const firebaseConfig = {
             { path: 'highscores', component: HighScoresComponent, canActivate: [AuthGuard]},
             { path: 'about', component: AboutComponent },
             { path: 'welcome', component: WelcomeComponent },
-            { path: '', redirectTo: 'WelcomeComponent', pathMatch: 'full' },
-            { path: '**', redirectTo: 'WelcomeComponent', pathMatch: 'full' }
+            { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+            { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
         ], { useHash: true })
     ],
     providers: [
